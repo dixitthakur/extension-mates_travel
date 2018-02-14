@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for CreateTrip</h1>
+
+<f:flashMessages />
+
+<table  class="tx_matestravel" >
+	<tr>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.user_id" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.trip_creator" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.destination" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.depart_date" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.return_date" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.trip_title" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.accommodation" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.iitinerary" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.budget" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.transport_mode" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.room_sharing" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.type_of_travel" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.purpose_of_travel" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.description" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.things_to_do" /></th>
+		<th><f:translate key="tx_matestravel_domain_model_createtrip.places_to_see" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{createTrips}" as="createTrip">
+		<tr>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.userId}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.tripCreator}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.destination}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.departDate -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.returnDate -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.tripTitle}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.accommodation}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.iitinerary}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.budget}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.transportMode}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.roomSharing}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.typeOfTravel}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.purposeOfTravel}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.thingsToDo}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{createTrip : createTrip}"> {createTrip.placesToSee}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{createTrip : createTrip}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{createTrip : createTrip}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New CreateTrip</f:link.action>
+</f:section>
+</html>

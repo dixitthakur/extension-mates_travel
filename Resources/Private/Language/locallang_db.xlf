@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-01-22T15:29:08Z" product-name="mates_travel">
+		<header/>
+		<body>
+			<trans-unit id="tx_matestravel_domain_model_createtrip">
+				<source>Create Trip</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.user_id">
+				<source>User Id</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.trip_creator">
+				<source>Trip Creator</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.destination">
+				<source>Destination</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.depart_date">
+				<source>Depart Date</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.return_date">
+				<source>Return Date</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.trip_title">
+				<source>Trip Title</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.accommodation">
+				<source>Accommodation</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.iitinerary">
+				<source>Iitinerary</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.budget">
+				<source>Budget</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.transport_mode">
+				<source>Transport Mode</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.room_sharing">
+				<source>Room Sharing</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.type_of_travel">
+				<source>Type Of Travel</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.purpose_of_travel">
+				<source>Purpose Of Travel</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.things_to_do">
+				<source>Things To Do</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_createtrip.places_to_see">
+				<source>Places To See</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_findtravelers">
+				<source>Find Travelers</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_findtravelers.destination">
+				<source>Destination</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_findtravelers.depart_date">
+				<source>Depart Date</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_findtravelers.return_date">
+				<source>Return Date</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_findtravelers.budget">
+				<source>Budget</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_findtravelers.travel_type">
+				<source>Travel Type</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_findtravelers.room_sharing">
+				<source>Room Sharing</source>
+			</trans-unit>
+			<trans-unit id="tx_matestravel_domain_model_findtravelers.purpose_of_travel">
+				<source>Purpose Of Travel</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

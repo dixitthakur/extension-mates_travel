@@ -1,0 +1,144 @@
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace TM=MT\MatesTravel\ViewHelpers}
+<div class="form-group form-row createTripForm">
+    <div class="col-md-6 form-control-group div-margin">
+        <div class="input-required" >
+            <label class="hidden" for="destination">
+                <f:translate key="tx_travelmates_domain_model_createtrip.destination" /> <span class="required">(required)</span>
+            </label>
+            <TM:form.select property="destination" title="Destination" class="selectpicker createTripSelect" options="{TM:form.GetCountries()}" />
+
+        </div>
+    </div>
+
+    <div class="col-md-3 form-control-group div-margin">
+        <label class="hidden " for="departDate">
+            <f:translate key="tx_travelmates_domain_model_createtrip.depart_date" /> <span class="required">(required)</span>
+        </label>
+        <div class='input-group date' id='depart'>
+            <f:form.textfield property="departDate" value="{createTrip.departDate->f:format.date()}" class="form-control" placeholder="Depart on DD/MM/YYYY"/>
+            <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+        </div>
+    </div>
+    <div class="col-md-3 form-control-group div-margin">
+        <label class="hidden" for="returnDate">
+            <f:translate key="tx_travelmates_domain_model_createtrip.return_date" /> <span class="required">(required)</span>
+        </label>
+        <div class='input-group date' id='return'>
+            <f:form.textfield property="returnDate" value="{createTrip.returnDate->f:format.date()}" class="form-control" placeholder="Return on DD/MM/YYYY" />
+            <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+        </div>
+    </div>
+</div>
+
+<div class="tripDetails container">
+    <h2>Trip Details</h2>
+    <div class="col-md-8 col-sm-6 col-xs-12 form-control-group">
+        <div class="input-wrapper input-required">
+            <label class="hidden" for="tripTitle">
+                <f:translate key="tx_travelmates_domain_model_createtrip.trip_title" /> <span class="required">(required)</span>
+            </label>
+            <f:form.textfield property="tripTitle" maxlength="50" placeholder="The trip tittle" class="form-control" id="tripForm-name" required=""/>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 form-control-group">
+        <div class="input-wrapper input-required" >
+            <label class="hidden" for="iitinerary">
+                <f:translate key="tx_travelmates_domain_model_createtrip.itinerary" /> <span class="required">(required)</span>
+            </label>
+            <TM:form.select property="iitinerary" multiple = "true" title="Itinerary" class="selectpicker"
+                           options="{TM:form.GetItinerary()}" />
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 form-control-group">
+        <div class="input-wrapper input-required" >
+            <label class="hidden" for="accommodation">
+                <f:translate key="tx_travelmates_domain_model_createtrip.accommodation" /> <span class="required">(required)</span>
+            </label>
+            <TM:form.select property="accommodation" multiple = "true" title="Accommodation" class="selectpicker"
+                           options="{TM:form.GetAccommodation()}" />
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 form-control-group">
+        <div class="input-wrapper input-required" >
+            <label class="hidden" for="budget">
+                <f:translate key="tx_travelmates_domain_model_createtrip.budget" /> <span class="required">(required)</span>
+            </label>
+            <TM:form.select property="budget"  title="Budget"  class="selectpicker createTripSelect"
+                           options="{TM:form.GetBudget()}" />
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 form-control-group">
+        <div class="input-wrapper input-required" >
+            <label class="hidden" for="roomSharing">
+                <f:translate key="tx_travelmates_domain_model_createtrip.room_sharing" /> <span class="required">(required)</span>
+            </label>
+            <f:form.select property="roomSharing"  title="Room Sharing "  class="selectpicker" options="{Yes: 'Yes', No: 'No'}" />
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 form-control-group">
+        <div class="input-wrapper input-required" >
+            <label class="hidden" for="purposeOfTravel">
+                <f:translate key="tx_travelmates_domain_model_createtrip.purpose_Of_Travel" /> <span class="required">(required)</span></label>
+            <TM:form.select property="purposeOfTravel" title="Purpose Of Tarvel" multiple = "true" class="selectpicker"
+                           options="{TM:form.GetPurposeOfTravel()}" />
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 form-control-group">
+        <div class="input-wrapper input-required" >
+            <label class="hidden" for="typeOfTravel">
+                <f:translate key="tx_travelmates_domain_model_createtrip.type_of_travel" /> <span class="required">(required)</span>
+            </label>
+            <TM:form.select property="typeOfTravel" title="Type Of Journey" multiple = "true" class="selectpicker"
+                           options="{TM:form.GetTypeOfTravel()}" />
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 form-control-group">
+        <div class="input-wrapper input-required" >
+            <label class="hidden" for="transportMode">
+                <f:translate key="tx_travelmates_domain_model_createtrip.transport_mode" /> <span class="required">(required)</span>
+            </label>
+            <TM:form.select property="transportMode" title="Mode Of Transportation" multiple = "true" class="selectpicker"
+                           options="{TM:form.GetMode()}" />
+            </select>
+        </div>
+    </div>
+    <div class="col-xs-12 removePadding">
+        <div class="form-control-group">
+            <div class="inner-wrapper">
+                <div class="input-wrapper input-required">
+                    <label class="hidden" for="description">
+                        <f:translate key="tx_travelmates_domain_model_createtrip.description" /> <span class="required">(required)</span>
+                    </label>
+                    <f:form.textfield property="description" class="formtextArea" placeholder="Shortly describe your trip" id="frm-tripForm-description" required=""/>
+                </div>
+            </div>
+        </div>
+        <div class="form-control-group">
+            <div class="inner-wrapper">
+                <label class="hidden"  for="placesToSee">
+                    <f:translate key="tx_travelmates_domain_model_createtrip.places_toSee" />
+                </label>
+                <f:form.textfield property="placesToSee" class="formtextArea"  placeholder="Places I want to see" id="frm-tripForm-want_to_see"/>
+            </div>
+        </div>
+        <div class="form-control-group">
+            <div class="inner-wrapper">
+                <label class="hidden" for="thingsToDo">
+                    <f:translate key="tx_travelmates_domain_model_createtrip.things_to_do" />
+                </label>
+                <f:form.textfield property="thingsToDo"  class="formtextArea" placeholder="Things I want to do" id="frm-tripForm-things_to_do"/>
+            </div>
+        </div>
+    </div>
+
+</div>
+</html>

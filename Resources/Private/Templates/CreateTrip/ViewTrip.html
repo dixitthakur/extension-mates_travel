@@ -1,0 +1,249 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+
+<f:section name="main">
+    <h1>Trip History</h1>
+
+    <f:flashMessages />
+    <div class="container">
+        <f:if condition="{createTrips ->  f:count()} > 1">
+            <f:then>
+                <f:for each="{createTrips}" as="createTrip">
+            <div class ="row showMyTrip">
+                <div class="col-sm-10">
+                    <div class="col-sm-12">
+                        <label>
+                            <i class="fa fa-text-height fontStyling" aria-hidden="true"></i>
+                            Trip Title :
+                        </label>
+                        <span> {createTrip.tripTitle}</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>
+                            <i class="fa fa-globe fontStyling" aria-hidden="true"></i>
+                            Destination :
+                        </label>
+                        <span> {createTrip.destination}</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>
+                            <i class="fa fa-calendar fontStyling" aria-hidden="true"></i>
+                            Depart :
+                        </label>
+                        <span> {createTrip.departDate -> f:format.date()}</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>
+                            <i class="fa fa-calendar fontStyling" aria-hidden="true"></i>
+                            Return :
+                        </label>
+                        <span> {createTrip.returnDate -> f:format.date()}</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>
+                            <i class="fa fa-suitcase fontStyling" aria-hidden="true"></i>
+                            Purpose :
+                        </label>
+                        <f:for each="{createTrip.purposeOfTravel}" as="purposeOfTravel">
+                            <span> {purposeOfTravel}</span>
+                        </f:for>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>
+                            <i class="fa fa-bed fontStyling" aria-hidden="true"></i>
+                            Room Sharing :
+                        </label>
+                        <span> {createTrip.roomSharing}</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <label>
+                            <i class="fa fa-money fontStyling" aria-hidden="true"></i>
+                            Budget :
+                        </label>
+                        <span> {createTrip.budget}</span>
+                    </div>
+                    <div class="col-sm-10">
+                        <label>
+                            <i class="fa fa-home fontStyling" aria-hidden="true"></i>
+                            Accomodation :
+                        </label>
+                        <f:for each="{createTrip.accommodation}" as="accommodation">
+                            <span> {accommodation}</span>
+                        </f:for>
+                    </div>
+                    <div class="col-sm-10">
+                        <label>
+                            <i class="fa fa-plane fontStyling" aria-hidden="true"></i>
+                            Journey :
+                        </label>
+                        <f:for each="{createTrip.typeOfTravel}" as="typeOfTravel">
+                            <span> {typeOfTravel}</span>
+                        </f:for>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="col-sm-12">
+                        <div class="actionStyling" data-toggle="modal" data-target="#{iterator.index}">
+                            <a type="button" class="btn btn-info btn-lg">Details</a>
+                        </div>
+                        <div id="{iterator.index}" class="modal fade" role="dialog">
+                            <div class="modal-dialog modal-lg">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title fontStyling">{createTrip.tripTitle} Details</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class ="row showMyTrip">
+                                            <div class="col-sm-12">
+                                                <label>
+                                                    <i class="fa fa-text-height fontStyling" aria-hidden="true"></i>
+                                                    Trip Title :
+                                                </label>
+                                                <span> {createTrip.tripTitle}</span>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>
+                                                    <i class="fa fa-globe fontStyling" aria-hidden="true"></i>
+                                                    Destination :
+                                                </label>
+                                                <span> {createTrip.destination}</span>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>
+                                                    <i class="fa fa-calendar fontStyling" aria-hidden="true"></i>
+                                                    Depart :
+                                                </label>
+                                                <span> {createTrip.departDate -> f:format.date()}</span>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>
+                                                    <i class="fa fa-calendar fontStyling" aria-hidden="true"></i>
+                                                    Return :
+                                                </label>
+                                                <span> {createTrip.returnDate -> f:format.date()}</span>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>
+                                                    <i class="fa fa-suitcase fontStyling" aria-hidden="true"></i>
+                                                    Purpose :
+                                                </label>
+                                                <f:for each="{createTrip.purposeOfTravel}" as="purposeOfTravel">
+                                                    <span> {purposeOfTravel}</span>
+                                                </f:for>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>
+                                                    <i class="fa fa-bed fontStyling" aria-hidden="true"></i>
+                                                    Room Sharing :
+                                                </label>
+                                                <span> {createTrip.roomSharing}</span>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>
+                                                    <i class="fa fa-money fontStyling" aria-hidden="true"></i>
+                                                    Budget :
+                                                </label>
+                                                <span> {createTrip.budget}</span>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <label>
+                                                    <i class="fa fa-home fontStyling" aria-hidden="true"></i>
+                                                    Accomodation :
+                                                </label>
+                                                <f:for each="{createTrip.accommodation}" as="accommodation">
+                                                    <span> {accommodation}</span>
+                                                </f:for>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label>
+                                                    <i class="fa fa-map fontStyling" aria-hidden="true"></i>
+                                                    Itinerary :
+                                                </label>
+                                                <f:for each="{createTrip.iitinerary}" as="iitinerary">
+                                                    <span> {iitinerary}</span>
+                                                </f:for>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <label>
+                                                    <i class="fa fa-plane fontStyling" aria-hidden="true"></i>
+                                                    Journey :
+                                                </label>
+                                                <f:for each="{createTrip.typeOfTravel}" as="typeOfTravel">
+                                                    <span> {typeOfTravel}</span>
+                                                </f:for>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <label>
+                                                    <i class="fa fa-car fontStyling" aria-hidden="true"></i>
+                                                    Transportation Mode :
+                                                </label>
+                                                <f:for each="{createTrip.transportMode}" as="transportMode">
+                                                    <span> {transportMode}</span>
+                                                </f:for>
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <label>
+                                                    <i class="fa fa-info fontStyling" aria-hidden="true"></i>
+                                                    Description :
+                                                </label>
+                                                <span> {createTrip.description}</span>
+
+                                            </div>
+                                            <f:if condition="{createTrip.placesToSee}!=''">
+                                                <div class="col-sm-10">
+                                                    <label>
+                                                        <i class="fa fa-map-marker fontStyling" aria-hidden="true"></i>
+                                                        Places to see :
+                                                    </label>
+
+                                                    <span>{createTrip.placesToSee}</span>
+                                                </div>
+                                            </f:if>
+                                            <f:if condition="{createTrip.thingsToDo}!=''">
+                                                <div class="col-sm-10">
+                                                    <label>
+                                                        <i class="fa fa-list-alt fontStyling" aria-hidden="true"></i>
+                                                        Things to do :
+                                                    </label>
+                                                    <span>{createTrip.thingsToDo}</span>
+                                                </div>
+                                            </f:if>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="actionStyling">
+                            <f:link.action action="delete" class="btn btn-danger btn-lg" arguments="{createTrip : createTrip}">Delete
+                            </f:link.action>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="actionStyling ">
+                            <f:link.action action="editTrip" class="btn btn-warning btn-lg" arguments="{createTrip : createTrip}">Edit</f:link.action>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+            </f:then>
+            <f:else>
+                <hr>
+                <div class="alert alert-info">
+                    <span>No trips have been created ,Please <a href="/index.php?id=7" class="alert-link">Create trip</a></span>
+                </div>
+            </f:else>
+        </f:if>
+    </div>
+</f:section>
+</html>

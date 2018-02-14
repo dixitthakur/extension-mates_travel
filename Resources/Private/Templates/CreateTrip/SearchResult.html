@@ -1,0 +1,123 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="main">
+<f:flashMessages />
+    <div class ="container">
+        <f:render partial="FormErrors" arguments="{object:CreateTrip}" />
+         <div class="container" >
+
+                    <f:form action="searchResult"  name="findTravelers" object="{findTravelers}" arguments="{createTrips:createTrips}" >
+                    <f:render partial="CreateTrip/SearchTrip" />
+                    </f:form>
+        </div>
+
+        <div class ="container searchResultSection">
+
+            <f:if condition="{createTrips ->  f:count()} > 1">
+                <f:then>
+            <f:for each="{createTrips}" as="createTrip">
+                <hr>
+                <div class ="row">
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <f:image image="{createTrip.user.firstImage}"  class="img-thumbnail img-circle profilePic" maxWidth="800"/>
+                        </div>
+                        <div class="col-sm-12 searchResultUsername">
+                            <label>
+                                <i class="fa fa-user fontStyling" aria-hidden="true"></i>
+                            </label>
+                            <span> {createTrip.user.firstName}{createTrip.user.lastName}</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-8 searchResultInfo">
+                        <div class="col-sm-12">
+                            <label>
+                                <i class="fa fa-text-height fontStyling" aria-hidden="true"></i>
+                                Trip Title :
+                            </label>
+                            <span> {createTrip.tripTitle}</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>
+                                <i class="fa fa-globe fontStyling" aria-hidden="true"></i>
+                                Destination :
+                            </label>
+                            <span> {createTrip.destination}</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>
+                                <i class="fa fa-calendar fontStyling" aria-hidden="true"></i>
+                                Depart :
+                            </label>
+                            <span> {createTrip.departDate -> f:format.date()}</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>
+                                <i class="fa fa-calendar fontStyling" aria-hidden="true"></i>
+                                Return :
+                            </label>
+                            <span> {createTrip.returnDate -> f:format.date()}</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>
+                                <i class="fa fa-suitcase fontStyling" aria-hidden="true"></i>
+                                Purpose :
+                            </label>
+                            <f:for each="{createTrip.purposeOfTravel}" as="purposeOfTravel">
+                                <span> {purposeOfTravel}</span>
+                            </f:for>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>
+                                <i class="fa fa-bed fontStyling" aria-hidden="true"></i>
+                                Room Sharing :
+                            </label>
+                            <span> {createTrip.roomSharing}</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <label>
+                                <i class="fa fa-money fontStyling" aria-hidden="true"></i>
+                                Budget :
+                            </label>
+                            <span> {createTrip.budget}</span>
+                        </div>
+                        <div class="col-sm-10">
+                            <label>
+                                <i class="fa fa-home fontStyling" aria-hidden="true"></i>
+                                Accomodation :
+                            </label>
+                            <f:for each="{createTrip.accommodation}" as="accommodation">
+                                <span> {accommodation}</span>
+                            </f:for>
+                        </div>
+                        <div class="col-sm-10">
+                            <label>
+                                <i class="fa fa-plane fontStyling" aria-hidden="true"></i>
+                                Journey :
+                            </label>
+                            <f:for each="{createTrip.typeOfTravel}" as="typeOfTravel">
+                                <span> {typeOfTravel}</span>
+                            </f:for>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="col-sm-12">
+                            <f:link.action action="detail" class="btn btn-info" arguments="{createTrip : createTrip}">Details</f:link.action>
+                        </div>
+                    </div>
+                </div>
+
+            </f:for>
+                </f:then>
+                <f:else>
+                    <hr>
+                    <div class="alert alert-danger">
+                        <span>Sorry no Trips were found for your search criteria</span>
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+    </div>
+</f:section>
+</html>

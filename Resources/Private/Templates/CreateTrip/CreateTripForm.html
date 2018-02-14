@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <div class ="container createTripMainDiv">
+    <f:flashMessages />
+
+    <f:render partial="FormErrors" arguments="{object:CreateTrip}" />
+
+    <f:form action="create"  name="createTrip" object="{createTrip}">
+        <div >
+            <h1>Create a new adventure</h1>
+        <f:render partial="CreateTrip/CreateTripFormFields" />
+        <div>
+            <f:form.submit value="Create" id = "createTrip1Button" class="btn btn-yellow createButton submit" style="margin-top: 10px;"/>
+        </div>
+        </div>
+    </f:form>
+    </div>
+</f:section>
+</html>

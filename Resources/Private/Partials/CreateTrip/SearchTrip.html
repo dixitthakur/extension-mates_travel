@@ -1,0 +1,48 @@
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace TM=MT\MatesTravel\ViewHelpers}
+<f:form action="searchResult"  name="findTravelers" object="{findTravelers}">
+    <div class="searchTripForm row" >
+        <div class="col-sm-12 form-group form-row">
+            <div class="col-md-4 form-control-group ">
+                <div class="input-required" >
+                    <label class="hidden" for="destination">
+                        <f:translate key="tx_travelmates_domain_model_createtrip.destination" />
+                    </label>
+                    <TM:form.select property="destination" title="Destination" class="selectpicker createTripSelect" options="{TM:form.GetCountries()}"/>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3 form-control-group">
+                <label class="hidden " for="departDate">
+                    <f:translate key="tx_travelmates_domain_model_createtrip.depart_date" />
+                </label>
+                <div class='input-group date' id='departSearch'>
+                    <f:form.textfield property="departDate" required="required" value="{findTravelers.departDate->f:format.date(format:'d/m/y')}"  class="form-control" placeholder="Depart on DD/MM/YYYY"/>
+                    <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+                </div>
+            </div>
+            <div class="col-sm-3 form-control-group">
+                <label class="hidden" for="returnDate">
+                    <f:translate key="tx_travelmates_domain_model_createtrip.return_date" />
+                </label>
+                <div class='input-group date' id='returnSearch'>
+                    <f:form.textfield property="returnDate" required="required" value="{findTravelers.returnDate->f:format.date(format:'d/m/y')}" class="form-control" placeholder="Return on DD/MM/YYYY" />
+                    <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <f:form.submit value="Search" id = "createTrip1Button" class="btn btn-danger btn-min-width"/>
+            </div>
+        </div>
+
+    </div>
+</f:form>
+
+
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-01-22T15:29:08Z" product-name="mates_travel">
+		<header/>
+		<body>
+			<trans-unit id="destination.description">
+				<source>destination</source>
+			</trans-unit>
+			<trans-unit id="depart_date.description">
+				<source>departDate</source>
+			</trans-unit>
+			<trans-unit id="return_date.description">
+				<source>returnDate</source>
+			</trans-unit>
+			<trans-unit id="budget.description">
+				<source>budget</source>
+			</trans-unit>
+			<trans-unit id="travel_type.description">
+				<source>travelType</source>
+			</trans-unit>
+			<trans-unit id="room_sharing.description">
+				<source>roomSharing</source>
+			</trans-unit>
+			<trans-unit id="purpose_of_travel.description">
+				<source>purposeOfTravel</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

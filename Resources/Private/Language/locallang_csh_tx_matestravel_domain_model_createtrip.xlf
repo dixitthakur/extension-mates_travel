@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-01-22T15:29:08Z" product-name="mates_travel">
+		<header/>
+		<body>
+			<trans-unit id="user_id.description">
+				<source>userId</source>
+			</trans-unit>
+			<trans-unit id="trip_creator.description">
+				<source>tripCreator</source>
+			</trans-unit>
+			<trans-unit id="destination.description">
+				<source>destination</source>
+			</trans-unit>
+			<trans-unit id="depart_date.description">
+				<source>departDate</source>
+			</trans-unit>
+			<trans-unit id="return_date.description">
+				<source>returnDate</source>
+			</trans-unit>
+			<trans-unit id="trip_title.description">
+				<source>tripTitle</source>
+			</trans-unit>
+			<trans-unit id="accommodation.description">
+				<source>accommodation</source>
+			</trans-unit>
+			<trans-unit id="iitinerary.description">
+				<source>iitinerary</source>
+			</trans-unit>
+			<trans-unit id="budget.description">
+				<source>budget</source>
+			</trans-unit>
+			<trans-unit id="transport_mode.description">
+				<source>transportMode</source>
+			</trans-unit>
+			<trans-unit id="room_sharing.description">
+				<source>roomSharing</source>
+			</trans-unit>
+			<trans-unit id="type_of_travel.description">
+				<source>typeOfTravel</source>
+			</trans-unit>
+			<trans-unit id="purpose_of_travel.description">
+				<source>purposeOfTravel</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="things_to_do.description">
+				<source>thingsToDo</source>
+			</trans-unit>
+			<trans-unit id="places_to_see.description">
+				<source>placesToSee</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

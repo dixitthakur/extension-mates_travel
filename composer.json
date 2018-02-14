@@ -1,0 +1,19 @@
+{
+    "name": "mt/mates-travel",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [
+        {
+            "name": "dixit",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "MT\\MatesTravel\\": "Classes"
+        }
+    }
+}
