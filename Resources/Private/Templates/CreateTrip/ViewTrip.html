@@ -7,7 +7,7 @@
 
     <f:flashMessages />
     <div class="container">
-        <f:if condition="{createTrips ->  f:count()} > 1">
+        <f:if condition="{createTrips ->  f:count()} >= 1">
             <f:then>
                 <f:for each="{createTrips}" as="createTrip">
             <div class ="row showMyTrip">
